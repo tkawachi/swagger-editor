@@ -275,6 +275,7 @@ SwaggerEditor.controller('TryOperation', function ($scope, formdataFilter,
 
     $.ajax({
       url: $scope.generateUrl(),
+      xhrFields: { withCredentials: true },
       type: $scope.operation.operationName,
       headers: _.omit($scope.getHeaders(), omitHeaders),
       data: $scope.getRequestBody(),
